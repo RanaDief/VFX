@@ -1,0 +1,879 @@
+{
+	"folders": [
+		{
+			"name": "VFX",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/opt/unreal-engine"
+		}
+	],
+	"settings": {
+		"js/ts.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"terminal.integrated.env.linux": {
+			"PATH": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/10.0/linux-x64:${env:PATH}",
+			"DOTNET_ROOT": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/10.0/linux-x64",
+			"DOTNET_HOST_PATH": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/10.0/linux-x64/dotnet",
+			"DOTNET_MULTILEVEL_LOOKUP": "0",
+			"DOTNET_ROLL_FORWARD": "LatestMajor"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "VFX Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Debug",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Debug",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFX Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Debug",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"DebugGame",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"DebugGame",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFX Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"DebugGame",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Development",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Development",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFX Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Development",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Test",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Test",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFX Linux Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Test",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Shipping",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Shipping",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFX Linux Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX Linux Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"Linux",
+					"Shipping",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Debug",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Debug",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFX LinuxArm64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Debug",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFX LinuxArm64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Development",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Development",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFX LinuxArm64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Development",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Test",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Test",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFX LinuxArm64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Test",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Shipping",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Shipping",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFX LinuxArm64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFX LinuxArm64 Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFX",
+					"LinuxArm64",
+					"Shipping",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFXEditor Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFXEditor",
+					"Linux",
+					"Debug",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFXEditor Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFXEditor",
+					"Linux",
+					"Debug",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFXEditor Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFXEditor Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFXEditor",
+					"Linux",
+					"Debug",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFXEditor Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFXEditor",
+					"Linux",
+					"DebugGame",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFXEditor Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFXEditor",
+					"Linux",
+					"DebugGame",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFXEditor Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFXEditor Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFXEditor",
+					"Linux",
+					"DebugGame",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFXEditor Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFXEditor",
+					"Linux",
+					"Development",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFXEditor Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFXEditor",
+					"Linux",
+					"Development",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"VFXEditor Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "VFXEditor Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"VFXEditor",
+					"Linux",
+					"Development",
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch VFX (Debug)",
+				"request": "launch",
+				"program": "/home/rana/Documents/Unreal Projects/VFX/Binaries/Linux/UnrealGame-Linux-Debug",
+				"preLaunchTask": "VFX Linux Debug Build",
+				"args": [
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch VFX (DebugGame)",
+				"request": "launch",
+				"program": "/home/rana/Documents/Unreal Projects/VFX/Binaries/Linux/UnrealGame-Linux-DebugGame",
+				"preLaunchTask": "VFX Linux DebugGame Build",
+				"args": [
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch VFX (Development)",
+				"request": "launch",
+				"program": "/home/rana/Documents/Unreal Projects/VFX/Binaries/Linux/UnrealGame",
+				"preLaunchTask": "VFX Linux Development Build",
+				"args": [
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch VFX (Test)",
+				"request": "launch",
+				"program": "/home/rana/Documents/Unreal Projects/VFX/Binaries/Linux/UnrealGame-Linux-Test",
+				"preLaunchTask": "VFX Linux Test Build",
+				"args": [
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch VFX (Shipping)",
+				"request": "launch",
+				"program": "/home/rana/Documents/Unreal Projects/VFX/Binaries/Linux/UnrealGame-Linux-Shipping",
+				"preLaunchTask": "VFX Linux Shipping Build",
+				"args": [
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch VFXEditor (Debug)",
+				"request": "launch",
+				"program": "/opt/unreal-engine/Engine/Binaries/Linux/UnrealEditor-Linux-Debug",
+				"preLaunchTask": "VFXEditor Linux Debug Build",
+				"args": [
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject"
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch VFXEditor (DebugGame)",
+				"request": "launch",
+				"program": "/opt/unreal-engine/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame",
+				"preLaunchTask": "VFXEditor Linux DebugGame Build",
+				"args": [
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject"
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch VFXEditor (Development)",
+				"request": "launch",
+				"program": "/opt/unreal-engine/Engine/Binaries/Linux/UnrealEditor",
+				"preLaunchTask": "VFXEditor Linux Development Build",
+				"args": [
+					"/home/rana/Documents/Unreal Projects/VFX/VFX.uproject"
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Linux Development Build",
+				"program": "/opt/unreal-engine/Engine/Build/BatchFiles/RunUBT.sh",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/home/rana/Documents/Unreal Projects/VFX/VFX.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"env": {
+					"PATH": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/10.0/linux-x64:${env:PATH}",
+					"DOTNET_ROOT": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/10.0/linux-x64",
+					"DOTNET_HOST_PATH": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/10.0/linux-x64/dotnet",
+					"DOTNET_MULTILEVEL_LOOKUP": "0",
+					"DOTNET_ROLL_FORWARD": "LatestMajor"
+				},
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/opt/unreal-engine"
+			}
+		]
+	}
+}
